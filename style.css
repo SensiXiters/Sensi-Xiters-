@@ -1,0 +1,520 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ===== HEADER (ahora más pequeño) ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 6px 30px; /* antes 15px 40px → más compacto */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 1px 8px rgba(72, 112, 254, 0.25);
+  z-index: 100;
+}
+
+header.scrolled {
+    padding: 6px 5%;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* ===== LOGO ===== */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 80px; /* más pequeño */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: rotate(10deg) scale(1.05);
+}
+
+/* ===== NAV DESKTOP ===== */
+.nav-desktop {
+    display: flex;
+    gap: 25px; /* menos espacio entre enlaces */
+    align-items: center;
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.nav-desktop a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px; /* más pequeño */
+    transition: all 0.3s ease;
+}
+
+.nav-desktop a:hover {
+    color: rgb(72, 112, 254);
+}
+
+/* Botón Contact compacto */
+.contact-btn {
+    background: rgb(72, 112, 254);
+    padding: 6px 15px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    border: 1.5px solid transparent;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: transparent;
+    border-color: rgb(72, 112, 254);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(34, 130, 255, 0.4);
+}
+
+/* ===== HAMBURGER & MOBILE NAV ===== */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.mobile-nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #000;
+    text-align: center;
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-nav a {
+    display: block;
+    padding: 12px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ===== HERO ===== */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 130px 5% 50px; /* menos espacio superior por header más pequeño */
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 span {
+    color: rgb(72, 112, 254);
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 22px;
+}
+
+.social-icons a:hover {
+    color: rgb(72, 112, 254);
+}
+
+.buttons a {
+    text-decoration: none;
+    background: rgb(72, 112, 254);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.buttons a:hover {
+    background: transparent;
+    border: 2px solid rgb(72, 112, 254);
+    box-shadow: 0 5px 15px rgb(72, 112, 254);
+}
+
+/* ===== HERO IMAGE ===== */
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    width: 500px;         
+    height: auto;
+    object-fit: contain;  
+    border-radius: 12px;
+    box-shadow: 0 0 25px #007298; 
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.hero-image:hover {
+    box-shadow: 0 0 45px #00BFFF; /* más intenso al pasar el mouse */
+    transform: scale(1.02);
+}
+
+/* ===== SECCIONES GENERALES ===== */
+.section {
+    padding: 120px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 36px;
+    color: rgb(72, 112, 254);
+    margin-bottom: 25px;
+}
+
+.section p {
+    font-size: 18px;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ===== TARJETAS GENERALES ===== */
+.services, .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #111;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 25px;
+    width: 280px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: rgb(72, 112, 254);
+    box-shadow: 0 0 20px rgba(34, 130, 255, 0.4);
+}
+
+.card i {
+    font-size: 40px;
+    color: rgb(72, 112, 254);
+    margin-bottom: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* ===== PRODUCTOS ===== */
+#productos {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+#productos h2 {
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#productos .sub-text {
+    color: #ccc;
+    font-size: 1em;
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 280px;
+    border: 2px solid transparent;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    border-color: rgb(72, 112, 254);
+    box-shadow: 0 0 12px 3px rgb(72, 112, 254);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-card h3 {
+    color: #fff;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.rating {
+    color: #f1c40f;
+    font-size: 1.1em;
+}
+
+.price {
+    color: #fff;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+/* ===== CONTACTO ===== */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 40px auto 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: #111;
+    border: 2px solid #333;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: rgb(72, 112, 254);
+}
+
+.contact-form button {
+    background: rgb(72, 112, 254);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: transparent;
+    border: 2px solid rgb(72, 112, 254);
+    box-shadow: 0 0 15px rgb(72, 112, 254);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    padding: 30px 0;
+    text-align: center;
+    background: #000;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* ===== FADE ANIMATION ===== */
+.fade-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .nav-desktop {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .product-card {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .logo img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+}
+
+.descargas {
+  text-align: center;
+  color: white;
+  background-color: #000;
+  padding: 50px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contenedor-descargas {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.descarga img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.descarga img:hover {
+  transform: scale(1.1);
+}
+
+.descarga p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.texto-panel .mensaje {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.texto-panel .sub {
+  font-size: 14px;
+  margin-top: 8px;
+  color: #ccc;
+}
+
+/* Estilo del botón principal */
+.boton-oferta {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 30px;
+  border: 2px solid rgb(72, 112, 254);
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.boton-oferta:hover {
+  background-color: rgb(72, 112, 254);
+  color: #000;
+  transform: scale(1.05);
+}
+
+.boton-oferta .titulo {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.boton-oferta .subtitulo {
+  font-size: 12px;
+  color: #ccc;
+}
